@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/index.css">
+    <link href="https://fonts.cdnfonts.com/css/plantin-mt-pro" rel="stylesheet">
+    <title>{{ site.title }} | {{ page.title }}</title>
+</head>
+<body class="{{ page.title }}">
+    
+        {% include header.html %}   
+               
+    
+        <article class="">
+            {% for post in site.posts %}
+            <li class="article-name">
+                <a href="{{ post.url }}">{{ post.title }}</a> by {{post.author }}
+                <time class="text-align-end">{{ post.date | date: "%b %d, %Y" }}</time>
+            </li>
+           
+            {% endfor %}
+        </article>
+   
+    <div class="container">
+           
+            <div class="main">
+                
+                <!--
+                {% for bulletin in site.bulletin %}
+                <div class="thumbnail">
+                    <a href="{{ bulletin.url }}">{{ bulletin.title }}</a>
+                    
+                </div>
+                    
+                {% endfor %}
+                 {% if post.image %}
+                <img src="{{ post.image }}" alt="" style="max-width: 100%;">
+                {% endif %}
+            
+-->
+
+            </div>
+            {{ content }}
+
+            
+    </div>
+    {% include footer.html %}
+</body>
+</html>
