@@ -9,4 +9,4 @@ author: "Laura Martens"
 
 <p></p>
 
-{% pdf "/files/IaSM_Bulletin1_Sideways.pdf" %}
+{{ site.baseurl }}{% pdf "/files/IaSM_Bulletin1_Sideways.pdf" %}

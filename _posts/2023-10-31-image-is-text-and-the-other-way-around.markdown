@@ -7,4 +7,4 @@ image :
 author: João Pedro Nogueira
 ---
 
-{% pdf "/files/IaSM_Juca_v2.pdf" %}
+{{ site.baseurl }}{% pdf "/files/IaSM_Juca_v2.pdf" %}
