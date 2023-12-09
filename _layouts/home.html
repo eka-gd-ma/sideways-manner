@@ -5,43 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="{{ site.baseurl }}/css/index.css">
-    <link href="https://fonts.cdnfonts.com/css/plantin-mt-pro" rel="stylesheet">
+    
+    <script type="text/javascript" src="js/script.js"></script>
     <title>{{ site.title }} | {{ page.title }}</title>
 </head>
 <body class="{{ page.title }}">
-    
-        {% include header.html %}   
-               
-    
-        <article class="">
-            {% for post in site.posts %}
-            <li class="article-name">
-                <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a> by {{post.author }}
-                <time class="text-align-end">{{ post.date | date: "%b %d, %Y" }}</time>
-            </li>
-           
-            {% endfor %}
-        </article>
    
-    <div class="container">
+    
+    <svg id="svg" viewBox="0 0 1050 850">
+       
+        <path id="rectangle" d="M 10 10 H 1020 V 550 H 10 Z" fill="transparent"/>
+       
+        <text>
            
-            <div class="main">
-                
-                <!--
-                {% for bulletin in site.bulletin %}
-                <div class="thumbnail">
-                    <a href="{{ bulletin.url }}">{{ bulletin.title }}</a>
-                    
-                </div>
-                    
-                {% endfor %}
-                 {% if post.image %}
-                <img src="{{ post.image }}" alt="" style="max-width: 100%;">
-                {% endif %}
-            
--->
+          <textPath id="sideNote" href="#rectangle" style="font-size: 8pt;">... is bi-weekly publishing platform that documents the current activities, research and writing by students of the MA graphic design program at the Estonian College of Arts in Tallinn, Estonia.
+           <!-- <animate attributeName="startOffset" from="-40%" to="250%" begin="0s" dur="20s" repeatCount="indefinite"></animate>--></textPath>
+        </text>
+       
+      </svg>
+    
 
-            </div>
+    {% include header.html %}
+  <div class="" id="parent">
+
+        <div class="grid">
+            {% for post in site.posts %}
+            
+           
+                <figure>
+                <img src="{{ post.image }}" alt="">
+                <figcaption>
+                <a href="{{site.baseurl}}{{ post.file }}">{{ post.title }}</a><br>by {{post.author }}
+                <time class="text-align-end">{{ post.date | date: "%b %d, %Y" }}</time>
+            </figcaption>
+                </figure>
+           
+        
+            {% endfor %}
+        </div>
+   
+       
+
+       
+    </div>              
+          
+
+            
             {{ content }}
 
             
@@ -49,3 +58,38 @@
     {% include footer.html %}
 </body>
 </html>
+
+<script>
+
+//down the hole code
+let svg = document.getElementById("svg");
+
+let rectangle = document.getElementById("rectangle");
+let rectangleLength = rectangle.getTotalLength();
+let sideNote = document.getElementById("sideNote");
+let scrollPosition = 0;
+
+
+function updateTextPathOffset(offset) {
+  sideNote.setAttribute("startOffset", offset);
+}
+
+function move() {
+  let margin = 0; //this is to ensure the text goes beyond the end of the path
+
+  requestAnimationFrame(function () {
+    let scrollPosition = window.scrollY;
+
+    if (scrollPosition <= rectangleLength + margin) {
+      updateTextPathOffset(scrollPosition);
+    }
+
+  });
+}
+
+
+
+window.addEventListener("scroll", move);
+
+
+</script>

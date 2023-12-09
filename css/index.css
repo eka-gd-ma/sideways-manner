@@ -1,16 +1,22 @@
 *{
     font-family: 'Plantin MT Pro', sans-serif;  
+   
 }
 
+@font-face {
+    font-family: Platin MT Pro;
+    src: url('/platin-mt-pro')  format('truetype');
+  }
+body{
+   margin: 0;
+}
+
+#parent{
+    padding: 40px 100px 0px 100px;
+}
 header{
-    font-size: 0.8rem;
-    width: 200px;
-    position:absolute;
-    right: 0px;
-    overflow: scroll;
-    height: 100vh;
-    z-index: +1;
-    background-color: white;
+ padding: 40px 100px 0px 100px;
+font-size: 0.9em;
    
 }
 
@@ -21,74 +27,14 @@ footer{
 
 }
 
-.col-1{
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    width: 150px;
-    transform-origin: top left;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 204px;
-    position: absolute;
+img {
+    max-width: 200px;
+    z-index: -2;
+    position: relative;
 }
 
-.col-2{
-    -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  width: 590px;
-  transform-origin: top left;
-  position: absolute;
-    top: 140px;
-    right: 35px;
-    bottom: 10px;
-    left: 204px;
-}
-
-.col-3{
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    width: 1500px;
-    transform-origin: top left;
-    position: absolute;
-    top: 740px;
-    right: 50px;
-    bottom: 10px;
-    left: 204px;
-}
-
-
-.content-box{
-    
-    column-count: 4;
-    column-gap: 40px;
-    font-size: 0.9em;
-    
-}
-
-.side-note{
-    
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    width: 1000px;
-    transform-origin: top left;
-    position: absolute;
-    top: 0px;
-    right: 40px;
-    bottom: 10px;
-    left: 140px;
+figure{
+    margin: 0;
 }
 
 .container{
@@ -97,44 +43,65 @@ footer{
     height: 88vh;
     overflow: scroll;
 }
-.main{
-    
-    overflow: scroll;
-    height: 100vh;
-    
-}
-.thumbnail{
+
+.grid{
     display: grid;
-    float: left;
-    width: 30%;
-}
-img{
-    max-width:100%;
+    grid-template-columns: auto auto auto;
 }
 
-.stripe{
-    overflow-y: scroll; 
-    overflow-x: hidden;
-    width: 100%; 
-    height: 100%;
-    height: 100vh;
-    position: relative;
-    
+.grid-header{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
 }
 
+.grid-item{
+    text-align: left;
+    padding: 10px;
+}
+
+ol{
+    padding:unset;
+    margin: unset;
+}
 a{
     color: black;
 }
 li{
     list-style: none;
+    text-indent: -8px;
 }
 
-.pdf-embed-wrap-c53d4535-8817-47a2-9110-751c75025d5d{
-
-    width: 300%;
+svg {
+  
+   z-index: -1;
+   position: fixed;
 }
 
-@media screen {
-    
-
+#body{
+    padding: 100px;
 }
+
+@media only screen and (max-width: 600px) {
+    .grid-header {
+      grid-template-columns: auto;
+    }
+    .grid{
+        grid-template-columns: auto;
+    }
+    #parent{
+        padding: 5px 10px 0px 10px;
+    }
+    header{
+        padding: 5px 10px 0px 10px;
+       font-size: 0.9em;
+          
+       }
+
+       img{
+        max-width: 100% !important;
+       }
+       svg{
+        display: none;
+       }
+  }
+
