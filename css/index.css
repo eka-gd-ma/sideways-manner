@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: Platin MT Pro;
-    src: url('/platin-mt-pro')  format('truetype');
+    src: url('{{ site.baseurl }}platin-mt-pro')  format('truetype');
   }
 body{
    margin: 0;
