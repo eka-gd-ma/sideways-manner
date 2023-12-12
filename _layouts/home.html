@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="author" content="rahak">
+    <meta name="generator" content="jekyll">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="{{ site.keywords }}">
+    
     <link rel="stylesheet" href="{{ site.baseurl }}/css/index.css">
     
     <script type="text/javascript" src="js/script.js"></script>
@@ -18,21 +22,21 @@
        
         <text>
            
-          <textPath id="sideNote" href="#rectangle" style="font-size: 8pt;">... is bi-weekly publishing platform that documents the current activities, research and writing by students of the MA graphic design program at the Estonian College of Arts in Tallinn, Estonia.
+          <textPath id="sideNote" href="#rectangle" style="font-size: 0.8rem;">In a sideways manner is a bi-weekly publishing platform that documents the current activities, research and writing by students of the MA graphic design program at the Estonian Academy of Arts in Tallinn, Estonia.
            <!-- <animate attributeName="startOffset" from="-40%" to="250%" begin="0s" dur="20s" repeatCount="indefinite"></animate>--></textPath>
         </text>
        
       </svg>
     
 
-    {% include header.html %}
+    
   <div class="" id="parent">
 
         <div class="grid">
             {% for post in site.posts %}
             
            
-                <figure>
+                <figure style="padding-top: 20px;">
                 <img src="{{site.baseurl}}{{ post.image }}" alt="">
                 <figcaption>
                 <a href="{{site.baseurl}}{{ post.file }}">{{ post.title }}</a><br>by {{post.author }}
@@ -61,7 +65,7 @@
 
 <script>
 
-//down the hole code
+//move text on scroll
 let svg = document.getElementById("svg");
 
 let rectangle = document.getElementById("rectangle");
@@ -75,10 +79,10 @@ function updateTextPathOffset(offset) {
 }
 
 function move() {
-  let margin = 0; //this is to ensure the text goes beyond the end of the path
+  let margin = 2; //this is to ensure the text goes beyond the end of the path
 
   requestAnimationFrame(function () {
-    let scrollPosition = window.scrollY;
+    let scrollPosition = window.scrollX;
 
     if (scrollPosition <= rectangleLength + margin) {
       updateTextPathOffset(scrollPosition);
