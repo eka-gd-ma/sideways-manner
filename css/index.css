@@ -1,48 +1,41 @@
 *{
     font-family: 'Plantin MT Pro', sans-serif;  
-   
 }
 
 @font-face {
     font-family: Platin MT Pro;
-    src: url('/platin-mt-pro')  format('truetype');
+    src: url('{{ site.baseurl }}/platin-mt-pro')  format('truetype');
   }
 
 body{
    margin: 0;
 }
 
-#parent{
-    padding: 40px 100px 0px 100px;
-}
+
 header{
- padding: 40px 100px 0px 100px;
-font-size: 0.9em;
-   
+    padding: 40px 100px 0px 100px;
+    font-size: 0.9em;
 }
 
 footer{
     font-size: 0.8em;
     position: sticky;
     bottom: 0;
-
 }
 
 img {
-    width: 380px ;
+    max-height: 80vh;
     z-index: -2;
     position: relative;
 }
 
 figure{
-    margin: 0;
-    float: left;
-    padding-left: 20px;
+    margin: 0; 
+    padding: 20px;
 }
 
 figcaption{
-    text-wrap: wrap;
-    width: 200px;
+    text-wrap: wrap;   
 }
 
 .container{
@@ -53,9 +46,8 @@ figcaption{
 }
 
 .grid{
+    display: inline-flex;
     
-    grid-template-columns: auto auto auto;
-    width: 4000px;
 }
 
 .grid-header{
@@ -72,9 +64,7 @@ ol{
     padding:unset;
     margin: unset;
 }
-a{
-    
-}
+
 li{
     list-style: none;
     text-indent: -8px;
@@ -86,32 +76,10 @@ svg {
    position: fixed;
 }
 
-#body{
-    padding: 100px;
-    display: block;
-}
 
 @media only screen and (max-width: 600px) {
-    .grid-header {
-      grid-template-columns: auto;
-    }
-    .grid{
-        grid-template-columns: auto;
-    }
-    #parent{
-        padding: 5px 10px 0px 10px;
-    }
-    header{
-        padding: 5px 10px 0px 10px;
-       font-size: 0.9em;
-          
-       }
+   
 
-       img{
-        max-width: 100% !important;
-       }
-       svg{
-        
-       }
+      
   }
 

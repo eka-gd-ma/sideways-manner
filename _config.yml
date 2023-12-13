@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Sideways Manner is bi-weekly publishing platform that documents the current activities, research and writing
   by students of the MA graphic design program at the Estonian College of Arts in Tallinn, Estonia.
 keywords: EKA, Graphic design, bulletin, Tallin, Estonia, Publishing, Bulletin, Weekly, Estonian Academy of Arts, Reseasrch, Sideways manner, In a sideways manner 
-baseurl: "" # the subpath of your site, e.g. /blog, https://eka-gd-ma.github.io/sideways-manner/
-url: "" # the base hostname & protocol for your site, e.g. https://eka-gd-ma.github.io/sideways-manner
+baseurl: "https://eka-gd-ma.github.io/sideways-manner/" # the subpath of your site, e.g. /blog, https://eka-gd-ma.github.io/sideways-manner/
+url: "https://eka-gd-ma.github.io/sideways-manner" # the base hostname & protocol for your site, e.g. https://eka-gd-ma.github.io/sideways-manner
 twitter_username: 
 github_username:
 
