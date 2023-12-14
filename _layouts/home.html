@@ -14,16 +14,15 @@
     <title>{{ site.title }} | {{ page.title }}</title>
 </head>
 <body class="{{ page.title }}">
-   
-
     
     <svg id="svg" viewBox="0 0 1050 850">
        
         <path id="rectangle" d="M 10 10 H 1040 V 570 H 10 Z" fill="transparent"/>
        
         <text>
-           
-          <textPath id="sideNote" href="#rectangle" style="font-size: 0.8rem;">In a sideways manner is a bi-weekly publishing platform that documents the current activities, research and writing by students of the MA graphic design program at the Estonian Academy of Arts in Tallinn, Estonia.
+          <textPath id="sideNote2" href="#rectangle"  style="font-size: 0.8rem;" startOffset="0">In a sideways manner is a bi-weekly publishing platform that documents the current activities, research and writing by students of the MA graphic design program at the Estonian Academy of Arts in Tallinn, Estonia.
+            <!--<animate attributeName="startOffset" from="-40%" to="250%" begin="0s" dur="20s" repeatCount="indefinite"></animate>--></textPath>
+          <textPath id="sideNote" href="#rectangle" style="font-size: 0.8rem;" startOffset="0">In a sideways manner is a bi-weekly publishing platform that documents the current activities, research and writing by students of the MA graphic design program at the Estonian Academy of Arts in Tallinn, Estonia.
             <!--<animate attributeName="startOffset" from="-40%" to="250%" begin="0s" dur="20s" repeatCount="indefinite"></animate>--></textPath>
         </text>
       </svg>
@@ -65,22 +64,26 @@
   let rectangle = document.getElementById("rectangle");
   let rectangleLength = rectangle.getTotalLength();
   let sideNote = document.getElementById("sideNote");
+  let sideNote2 = document.getElementById("sideNote2");
   
-  function updateTextPathOffset(offset) {
+  function updateTextPathOffset(offset, offset2) {
     sideNote.setAttribute("startOffset", offset);
+    sideNote2.setAttribute("startOffset", offset2);
   }
   
   function move() {
     requestAnimationFrame(function () {
-      // Calculate scroll position based on the scroll amount
+      // Calculate scroll position based on the scroll amount -3179
       let scrollAmount = window.scrollX; // Adjust the divisor to control the scroll speed
       let scrollPosition = scrollAmount % rectangleLength;
   
       // Calculate the adjusted startOffset
       let adjustedOffset = (scrollPosition + rectangleLength) % rectangleLength;
   console.log(adjustedOffset);
+      let adjustedOffset2 = (adjustedOffset - 3179); 
       // Update the text position
-      updateTextPathOffset(adjustedOffset);
+      updateTextPathOffset(adjustedOffset, adjustedOffset2);
+      
   
       move(); // Call the move function recursively for continuous animation
     });
