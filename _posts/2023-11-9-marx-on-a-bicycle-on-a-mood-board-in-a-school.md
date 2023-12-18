@@ -5,5 +5,5 @@ date: 2023-11-09 15:43:38 +0200
 categories: 
 image: /img/Iasm_06_RK.png
 author: "Rok Ifkoc Krajc"
-file: /files/Iasm_06_RK.pdf
+file: /files/Iasm_07_RK.pdf
 ---

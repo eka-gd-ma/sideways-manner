@@ -70,11 +70,16 @@ li{
     text-indent: -8px;
 }
 
+
 svg {
   
-   z-index: -1;
-   position: fixed;
-}
+    z-index: -1;
+    position: fixed;
+    position: fixed;
+    top: 5px;
+ }
+ 
+
 
 
 @media only screen and (max-width: 600px) {
@@ -83,3 +88,18 @@ svg {
       
   }
 
+  #parent{
+    margin-top: 27px;
+  }
+
+  a {
+    text-decoration: underline;
+    color: black;
+
+  }
+
+  a:visited{
+   color: grey;
+  }
+
+ 
